@@ -33,7 +33,7 @@ public class ProductBasket {
         int sum = 0;
         for (int i = 0; i < basket.length; i++) {
             if (basket[i] != null) {
-                System.out.println(basket[i].getProductName() + " : " + basket[i].getProductPrice());
+                System.out.println(basket[i]);
                 sum += basket[i].getProductPrice();
             }
         }

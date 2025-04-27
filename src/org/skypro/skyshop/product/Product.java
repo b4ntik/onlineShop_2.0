@@ -1,12 +1,12 @@
 package org.skypro.skyshop.product;
 
-public class Product {
-    private String productName;
-    private int productPrice;
-        public Product(String productName, int productPrice){
-            this.productName= productName;
-            this.productPrice = productPrice;
-        }
+public abstract class Product {
+    protected String productName;
+    protected boolean isSpecial;
+
+    public Product(String productName) {
+        this.productName = productName;
+    }
 
     public String getProductName() {
         return productName;
@@ -16,13 +16,17 @@ public class Product {
         this.productName = productName;
     }
 
-    public int getProductPrice() {
-        return productPrice;
+    public abstract int getProductPrice();
+
+    public boolean isSpecial(){
+        if(getClass() != SimpleProduct.class){
+            isSpecial = false;
+        }
+        return isSpecial;
+
     }
 
-    public void setProductPrice(int productPrice) {
-        this.productPrice = productPrice;
+    public String toString() {
+        return getProductName() + ": "+ getProductPrice();
     }
-    public String toString(){
-            return productName + ", его цена  "+ productPrice;    }
 }
