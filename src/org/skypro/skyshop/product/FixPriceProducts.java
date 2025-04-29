@@ -25,4 +25,10 @@ public class FixPriceProducts extends Product{
 
         return isSpecial;
     }
+
+
+    @Override
+    public String getSearchTerm() {
+        return getProductName() + "PRODUCT";
+    }
 }
